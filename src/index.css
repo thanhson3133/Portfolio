@@ -17,7 +17,32 @@ code {
 
 .app_css {
   scrollbar-width: none;
+  background: url("../public/img/bg.jpeg");
 }
 ::-webkit-scrollbar {
   display: none;
+}
+
+.hero_animate {
+  animation: animate 2s infinite ease alternate;
+}
+@keyframes animate {
+  to {
+    transform: translateY(30px);
+  }
+}
+
+.text_stroke {
+  font-size: 90px;
+  font-weight: bold;
+  cursor: pointer;
+  color: transparent;
+  -webkit-text-stroke: 1px white;
+  position: relative;
+}
+.text_stroke::after {
+  content: "Web Design";
+  position: absolute;
+  top: 0;
+  left: 0;
 }
