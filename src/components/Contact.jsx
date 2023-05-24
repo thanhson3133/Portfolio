@@ -10,12 +10,24 @@ import {
 } from "../constants";
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-
   @media only screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
+  }
+`;
+const Left = styled.div`
+  @media only screen and (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+const Form = styled.form`
+  @media only screen and (max-width: 768px) {
+    width: 200px;
+  }
+`;
+const Right = styled.div`
+  @media only screen and (max-width: 768px) {
+    display: none;
   }
 `;
 const Contact = () => {
@@ -45,16 +57,16 @@ const Contact = () => {
 
   return (
     <div className="h-screen snap-center">
-      <div className="w-full h-full flex justify-between gap-12">
-        <div className="flex items-center justify-end" style={{ flex: 1 }}>
-          <form
+      <Container className="w-full h-full flex justify-between gap-12">
+        <Left className="flex items-center justify-end" style={{ flex: 1 }}>
+          <Form
             ref={ref}
             action="#"
             className="flex flex-col gap-5"
             style={{ width: "500px" }}
             onSubmit={handleSubmit}
           >
-            <h1 className="font-light">Contact</h1>
+            <h1 className="font-light">Contact me</h1>
             <input
               type="text"
               className="p-5 bg-white text-black border-none rounded"
@@ -79,12 +91,12 @@ const Contact = () => {
             </button>
             {success &&
               "Your message has been sent. We'll get back to you soon!"}
-          </form>
-        </div>
-        <div style={{ flex: 1 }}>
+          </Form>
+        </Left>
+        <Right style={{ flex: 1 }}>
           <MapChart />
-        </div>
-      </div>
+        </Right>
+      </Container>
     </div>
   );
 };

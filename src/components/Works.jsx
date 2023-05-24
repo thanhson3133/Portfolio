@@ -12,9 +12,6 @@ const data = [
 ];
 
 const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-
   @media only screen and (max-width: 768px) {
     width: 100%;
     flex-direction: column;
@@ -22,30 +19,14 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-
   @media only screen and (max-width: 768px) {
     padding: 20px;
     justify-content: center;
   }
 `;
 
-const List = styled.ul`
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
 const ListItem = styled.li`
-  font-size: 60px;
-  font-weight: bold;
-  cursor: pointer;
-  color: transparent;
   -webkit-text-stroke: 1px white;
-  position: relative;
-
   @media only screen and (max-width: 768px) {
     font-size: 24px;
     color: white;
@@ -78,21 +59,29 @@ const ListItem = styled.li`
 
 const Right = styled.div`
   flex: 1;
+  @media only screen and (max-width: 768px) {
+    align-items: center;
+  }
 `;
 
 const Works = () => {
   const [work, setWork] = useState("Web Design");
   return (
     <div className="h-screen snap-center flex justify-center relative font-light">
-      <Container className="container">
-        <Left>
-          <List>
+      <Container className="container flex justify-between">
+        <Left className="flex items-center" style={{ flex: 1 }}>
+          <ul className="list-none flex flex-col gap-5">
             {data.map((item) => (
-              <ListItem key={item} text={item} onClick={() => setWork(item)}>
+              <ListItem
+                className="text-6xl font-bold cursor-pointer text-transparent relative"
+                key={item}
+                text={item}
+                onClick={() => setWork(item)}
+              >
                 {item}
               </ListItem>
             ))}
-          </List>
+          </ul>
         </Left>
         <Right>
           {work === "Web Design" ? (

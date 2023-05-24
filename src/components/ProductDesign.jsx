@@ -12,10 +12,6 @@ const ProductDesign = () => {
         </Stage>
         <OrbitControls enableZoom={false} />
       </Canvas>
-      <div className="w-52 h-20 bg-white rounded-lg absolute bottom-52 right-24 text-black font-normal text-sm">
-        We design products with a strong focus on both world class design and
-        ensuring your product is a market success
-      </div>
     </>
   );
 };
