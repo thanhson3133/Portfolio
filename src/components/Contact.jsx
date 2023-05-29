@@ -9,6 +9,8 @@ import {
   EMAIL_TEMPLATE_ID,
 } from "../constants";
 
+import { Toaster, toast } from "react-hot-toast";
+
 const Container = styled.div`
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -32,7 +34,6 @@ const Right = styled.div`
 `;
 const Contact = () => {
   const ref = useRef();
-  const [success, setSuccess] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,12 +46,17 @@ const Contact = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          setSuccess(true);
+          toast.success(
+            "Your message has been sent. We'll get back to you soon!",
+            {
+              position: "top-right",
+            }
+          );
         },
         (error) => {
-          console.log(error.text);
-          setSuccess(false);
+          toast.error("Error! Please again!", {
+            position: "top-right",
+          });
         }
       );
   };
@@ -61,6 +67,7 @@ const Contact = () => {
         <Left className="flex items-center justify-end" style={{ flex: 1 }}>
           <Form
             ref={ref}
+            id="form"
             action="#"
             className="flex flex-col gap-5"
             style={{ width: "500px" }}
@@ -89,9 +96,8 @@ const Contact = () => {
             <button className="p-1 bg-indigo-500 text-white cursor-pointer border-none rounded">
               Send
             </button>
-            {success &&
-              "Your message has been sent. We'll get back to you soon!"}
           </Form>
+          <Toaster position="top-right" reverseOrder={true} />
         </Left>
         <Right style={{ flex: 1 }}>
           <MapChart />
