@@ -5,6 +5,7 @@ import Contact from "./components/Contact";
 import ScrollButton from "./components/ScrollButton";
 
 function App() {
+  console.log("window.scrollY", window.scrollY);
   return (
     <div className="app_css h-screen scroll-smooth snap-y snap-mandatory overflow-y-auto text-white ">
       <ScrollButton />
