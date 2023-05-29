@@ -54,7 +54,10 @@ const Img = styled.img`
 `;
 const Hero = () => {
   return (
-    <Section className="h-screen snap-center flex justify-between flex-col items-center">
+    <Section
+      id="hero"
+      className="h-screen snap-center flex justify-between flex-col items-center"
+    >
       <Navbar />
       <Container className="h-full snap-center container flex justify-between">
         <Left

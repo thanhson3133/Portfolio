@@ -56,7 +56,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="h-screen snap-center">
+    <div id="contact" className="h-screen snap-center">
       <Container className="w-full h-full flex justify-between gap-12">
         <Left className="flex items-center justify-end" style={{ flex: 1 }}>
           <Form

@@ -67,7 +67,10 @@ const Right = styled.div`
 const Works = () => {
   const [work, setWork] = useState("Web Design");
   return (
-    <div className="h-screen snap-center flex justify-center relative font-light">
+    <div
+      id="works"
+      className="h-screen snap-center flex justify-center relative font-light"
+    >
       <Container className="container flex justify-between">
         <Left className="flex items-center" style={{ flex: 1 }}>
           <ul className="list-none flex flex-col gap-5">

@@ -23,7 +23,10 @@ const Title = styled.h1`
 `;
 const Who = () => {
   return (
-    <div className="h-screen snap-center flex justify-between flex-col items-center">
+    <div
+      id="who"
+      className="h-screen snap-center flex justify-between flex-col items-center"
+    >
       <div className="h-screen snap-center container flex justify-between">
         <Left
           className=" "

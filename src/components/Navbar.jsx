@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/alt-text */
 import React from "react";
-import logo from "../assests/imgs/logo.png";
+import logo from "../assests/imgs/logo-ts-dev-white.png";
 import searchIcon from "../assests/imgs/search.png";
 import styled from "styled-components";
+
 const Section = styled.div`
   @media only screen and (max-width: 768px) {
     width: 100%;
@@ -19,17 +20,24 @@ const List = styled.ul`
     display: none;
   }
 `;
+
 const Navbar = () => {
   return (
     <Section className="flex justify-center w-full">
       <Container className="container flex justify-between items-center p-1">
         <div className="flex items-center gap-12">
-          <img src={logo} style={{ height: "50px" }} />
+          <img src={logo} style={{ height: "30px" }} />
           <List className="flex gap-5 list-none">
             <li>Home</li>
-            <li>Studio</li>
-            <li>Works</li>
-            <li>Contact</li>
+            <li>
+              <a href="#who">Studio</a>
+            </li>
+            <li>
+              <a href="#works">Work</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
           </List>
         </div>
         <div className="flex items-center gap-5">
