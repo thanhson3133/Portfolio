@@ -1,3 +1,4 @@
+import "antd/dist/reset.css";
 import Hero from "./components/Hero";
 import Who from "./components/Who";
 import Works from "./components/Works";
