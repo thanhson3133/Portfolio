@@ -9,15 +9,7 @@ import {
 import map from "../assests/features.json";
 const MapChart = () => {
   return (
-    <ComposableMap
-      projection="geoAzimuthalEqualArea"
-      projectionConfig={{
-        rotate: [-10.0, -52.0, 0],
-        center: [-5, -3],
-        scale: 1100,
-      }}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <ComposableMap style={{ width: "120%", height: "100%" }}>
       <Geographies
         geography={map}
         fill="#2c065d"
@@ -31,17 +23,23 @@ const MapChart = () => {
         }
       </Geographies>
       <Annotation
-        subject={[2.3522, 48.8566]}
-        dx={-90}
-        dy={-30}
+        subject={[107.1362, 10.4114]}
+        dx={100}
+        dy={-50}
         connectorProps={{
           stroke: "white",
           strokeWidth: 2,
           strokeLinecap: "round",
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="white">
-          {"Paris"}
+        <text
+          x="0"
+          y="-4"
+          textAnchor="end"
+          alignmentBaseline="middle"
+          fill="white"
+        >
+          {"VungTau"}
         </text>
       </Annotation>
     </ComposableMap>

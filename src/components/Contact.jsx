@@ -138,8 +138,10 @@ const Contact = () => {
           </Form>
           <Toaster position="top-right" reverseOrder={true} />
         </Left>
-        <Right style={{ flex: 1 }}>
-          <MapChart />
+        <Right style={{ flex: 1 }} className="relative">
+          <div className="absolute -left-64 w-full h-full">
+            <MapChart />
+          </div>
         </Right>
       </Container>
     </div>
